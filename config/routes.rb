@@ -1,8 +1,15 @@
 Chupandero::Application.routes.draw do
 
+  resources :registers
+
+
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+  
+ 
   get "static_pages/contact"
   
-  root :to => 'static_pages#home'
+  root :to => 'static_pages#registro'
+  match "home", to: 'static_pages#home'
   
 
   # The priority is based upon order of creation:
