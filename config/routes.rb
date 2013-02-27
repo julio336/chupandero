@@ -1,5 +1,8 @@
 Chupandero::Application.routes.draw do
 
+  resources :bars
+
+
   resources :registers
 
 

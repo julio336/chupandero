@@ -1,0 +1,39 @@
+<h1>Listing bars</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Logo</th>
+    <th>Description</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Horary</th>
+    <th>Promo</th>
+    <th>Image1</th>
+    <th>Image2</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bars.each do |bar| %>
+  <tr>
+    <td><%= bar.name %></td>
+    <td><%= bar.logo %></td>
+    <td><%= bar.description %></td>
+    <td><%= bar.address %></td>
+    <td><%= bar.phone %></td>
+    <td><%= bar.horary %></td>
+    <td><%= bar.promo %></td>
+    <td><%= bar.image1 %></td>
+    <td><%= bar.image2 %></td>
+    <td><%= link_to 'Show', bar %></td>
+    <td><%= link_to 'Edit', edit_bar_path(bar) %></td>
+    <td><%= link_to 'Destroy', bar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bar', new_bar_path %>

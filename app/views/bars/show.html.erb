@@ -1,0 +1,70 @@
+	<div class="row">
+		<div class="span12">
+			<div class="span5" id="main_menu">
+				<div class="main_logo">
+					<%= image_tag(@bar.logo)%>
+				</div>
+				<hr style="margin:0">
+				<h1 id="bar_title">
+					<%= @bar.name %>
+				</h1>
+				<hr style="margin:0">
+				<p id="bar_info">
+					<i class="icon-map-marker icon-white"></i>
+					<%= @bar.address%>
+					<br/>
+					<%= link_to "Ver mapa", "#"%>
+				</p>
+				<p id="bar_info">
+					<i class="icon-tag icon-white"></i>
+					<%= link_to @bar.page, @bar.page %>
+					<br/>
+				</p>
+				<p id="bar_info">
+					<i class="icon-envelope icon-white"></i>
+					<%= link_to @bar.email, "#" %>
+					<br/>
+				</p>
+				<p id="bar_info">
+					<i class="icon-time icon-white"></i>
+					Horarios:<br/> <%= @bar.horary %>
+				</p>
+				<p id="bar_info">
+					<i class="icon-info-sign icon-white"></i>
+					Teléfono: <br/> <%= @bar.phone %>
+				</p>
+				<br/>
+				<br/>
+				<br/>
+				
+			</div>
+			<div style="margin-left:347px; margin-top:-10px; width: 933px" class="span9">
+				<p id="notice"><%= notice %></p>
+				<div id="myCarousel" style="height:350px; margin:0" class="carousel slide">
+						  <!-- Carousel items -->
+				   <div class="carousel-inner">
+					<div class="active item"><%= image_tag(@bar.image1, style: "max-height:350px; max-width: 900px ")%></div>
+				    <div class="item"><%= image_tag(@bar.image2,  style: "max-height:350px; max-width: 900px")%></div>
+				  </div>
+				  <!-- Carousel nav -->
+				  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+				  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+				</div>
+				<div class="span9">
+					<h1 class="promo" >
+						"<%= @bar.promo%>"
+					</h1>
+					<div class="span6 offset1">
+						<p class="resena">
+							<%= @bar.description %>
+						</p>
+					</div>
+				</div>
+				<div class="span2">
+				</div>
+				<%= render 'layouts/footer' %>
+			</div>
+		</div>
+	</div>
+
+
