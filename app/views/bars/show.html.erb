@@ -1,13 +1,23 @@
-	<div class="row">
+<% content_for :meta do %>
+	<% meta :keywords => %w(chupandero cerveza puebla amigos) %>
+	<% meta [:property => "og:image", :content => "https://launchrock-assets.s3.amazonaws.com/facebook-files/OM38ZA8H_1361245291491.jpg?_=1"] %>
+	<% meta [:property => "og:description", :content => "Descubre los mejores bares de Puebla - chupandero.com"] %>
+	<% meta [:property => "og:type", :content => "website"] %>
+	<% meta [:property => "og:title", :content => " Chupandero - Descubre los mejores bares de Puebla"] %>
+	<% meta [:property => "og:url", :content => "http://chupandero.com/bars/#{@bar.id}"] %>
+<% end %>
+
+	<div class="row-fluid">
 		<div class="span12">
-			<div class="span5" id="main_menu">
+				<div class="span3" id="main_menu">
 				<div class="main_logo">
-					<%= image_tag(@bar.logo)%>
+					<%= image_tag(@bar.logo, style:"width:327px; height: 300px")%>
+					<!-- <%= image_tag "http://maps.google.com/maps/api/staticmap?size=400x400&sensor=false&zoom=16&markers=#{@bar.latitude}%2C#{@bar.longitude}"%> -->
 				</div>
 				<hr style="margin:0">
-				<h1 id="bar_title">
+				<div style="text-align:center" id="bar_title">
 					<%= @bar.name %>
-				</h1>
+				</div>
 				<hr style="margin:0">
 				<p id="bar_info">
 					<i class="icon-map-marker icon-white"></i>
@@ -33,38 +43,56 @@
 					<i class="icon-info-sign icon-white"></i>
 					Teléfono: <br/> <%= @bar.phone %>
 				</p>
-				<br/>
-				<br/>
-				<br/>
-				
 			</div>
-			<div style="margin-left:347px; margin-top:-10px; width: 933px" class="span9">
-				<p id="notice"><%= notice %></p>
-				<div id="myCarousel" style="height:350px; margin:0" class="carousel slide">
-						  <!-- Carousel items -->
-				   <div class="carousel-inner">
-					<div class="active item"><%= image_tag(@bar.image1, style: "max-height:350px; max-width: 900px ")%></div>
-				    <div class="item"><%= image_tag(@bar.image2,  style: "max-height:350px; max-width: 900px")%></div>
-				  </div>
-				  <!-- Carousel nav -->
-				  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-				  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-				</div>
-				<div class="span9">
-					<h1 class="promo" >
-						"<%= @bar.promo%>"
-					</h1>
-					<div class="span6 offset1">
-						<p class="resena">
-							<%= @bar.description %>
-						</p>
+			<div class="row-fluid">
+				<div style="margin-left: -49px; margin-top: 1px;">
+					<div class="span9 offset3">
+						<p id="notice"><%= notice %></p>
+						<div id="myCarousel" style="height:350px; margin:0; box-shadow: 0px 6px 15px 2px; -webkit-box-shadow: 2px 6px 15px 1px;" class	="carousel slide">
+								  <!-- Carousel items -->
+						   <div class="carousel-inner">
+							<div class="active item"><%= image_tag(@bar.image1, style: "max-height:348px; max-width: 900px ")%></div>
+						    <div class="item"><%= image_tag(@bar.image2,  style: "max-height:348px; max-width: 900px")%></div>
+						  </div>
+						  <!-- Carousel nav -->
+						  <a style="display:none" class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+						  <a style="display:none" class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+						</div>
+						<div class="span10">
+							<h1 class="promo" >
+								"<%= @bar.promo%>"
+							</h1>
+							<div class="span9 offset1">
+								<p class="resena">
+									<%= @bar.description %>
+								</p>
+								<hr>
+								<br>
+								<div class="fb-comments" data-href="http://chupandero.com/bars/<%= @bar.id %>" data-width="650" data-num-posts="10"></div>
+							</div>
+						</div>
+						<%= render 'layouts/footer' %>
 					</div>
 				</div>
-				<div class="span2">
-				</div>
-				<%= render 'layouts/footer' %>
 			</div>
 		</div>
 	</div>
+<div id="fb-root"></div>
+<script>
 
+(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=458747400865661";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));	
+	
+	$(function(){
+		$('.carousel').carousel({
+	  		interval: 3000,
+			pause: 'hover'
+		});
+	});
+</script>
 
