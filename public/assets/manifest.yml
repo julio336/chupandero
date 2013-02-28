@@ -11,10 +11,10 @@ cover.png: cover-57fd628367cb3f21fcf4e6719170b411.png
 cover/index.png: cover-57fd628367cb3f21fcf4e6719170b411.png
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
-application.js: application-0a3a17f85418fe423ef4af78a3ac129c.js
-application/index.js: application-0a3a17f85418fe423ef4af78a3ac129c.js
-application.css: application-78ba91b12c838bef14dbe896d8d9b9cc.css
-application/index.css: application-78ba91b12c838bef14dbe896d8d9b9cc.css
+application.js: application-d1b2560defd75f3edc7deffb99cd1885.js
+application/index.js: application-d1b2560defd75f3edc7deffb99cd1885.js
+application.css: application-a7ce04e880e3a9c11c36cceb2a985a52.css
+application/index.css: application-a7ce04e880e3a9c11c36cceb2a985a52.css
 jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 fontawesome-webfont.eot: fontawesome-webfont-86a6da438b901860c3a54e21f9098bf8.eot
