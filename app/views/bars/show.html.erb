@@ -13,6 +13,7 @@
 				<div class="main_logo">
 					<%= image_tag(@bar.logo, style:"width:327px; height: 300px")%>
 					<!-- <%= image_tag "http://maps.google.com/maps/api/staticmap?size=400x400&sensor=false&zoom=16&markers=#{@bar.latitude}%2C#{@bar.longitude}"%> -->
+				<!--	<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.mx/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=Puebla&amp;aq=&amp;sll=23.554132,-102.6205&amp;sspn=19.738439,34.40918&amp;ie=UTF8&amp;hq=&amp;hnear=Circuito+Juan+Pablo+II,+Puebla&amp;ll=<%= @bar.latitude%>,<%= @bar.longitude %>&amp;spn=0.022397,0.038581&amp;t=m&amp;z=14&amp;output=embed&iwloc=near"></iframe>-->
 				</div>
 				<hr style="margin:0">
 				<div style="text-align:center" id="bar_title">
@@ -23,7 +24,7 @@
 					<i class="icon-map-marker icon-white"></i>
 					<%= @bar.address%>
 					<br/>
-					<%= link_to "Ver mapa", "#"%>
+					<%= link_to "Ver mapa", map_path(:bar_id => @bar.id), {:id => "modal", :rel => "tab", :remote => true, 'data-controls-modal' =>  "modal-window", 'data-backdrop' => true, 'data-keyboard' => true} %>
 				</p>
 				<p id="bar_info">
 					<i class="icon-tag icon-white"></i>
@@ -48,11 +49,11 @@
 				<div style="margin-left: -49px; margin-top: 1px;">
 					<div class="span9 offset3">
 						<p id="notice"><%= notice %></p>
-						<div id="myCarousel" style="height:350px; margin:0; box-shadow: 0px 6px 15px 2px; -webkit-box-shadow: 2px 6px 15px 1px;" class	="carousel slide">
+						<div id="myCarousel" style="height:378px; margin:0; box-shadow: 0px 6px 15px 2px; -webkit-box-shadow: 2px 6px 15px 1px;" class	="carousel slide">
 								  <!-- Carousel items -->
 						   <div class="carousel-inner">
-							<div class="active item"><%= image_tag(@bar.image1, style: "max-height:348px; max-width: 900px ")%></div>
-						    <div class="item"><%= image_tag(@bar.image2,  style: "max-height:348px; max-width: 900px")%></div>
+							<div class="active item"><%= image_tag(@bar.image1, style: "max-height:378px; max-width: 900px ")%></div>
+						    <div class="item"><%= image_tag(@bar.image2,  style: "max-height:378px; max-width: 900px")%></div>
 						  </div>
 						  <!-- Carousel nav -->
 						  <a style="display:none" class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>

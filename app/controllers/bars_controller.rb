@@ -80,4 +80,8 @@ class BarsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def map
+     @bar = Bar.find(params[:bar_id])
+  end
 end

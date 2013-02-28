@@ -14,7 +14,8 @@ Chupandero::Application.routes.draw do
   root :to => 'static_pages#registro'
   match "home", to: 'static_pages#home'
   
-
+  get '/map', to: 'bars#map'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
