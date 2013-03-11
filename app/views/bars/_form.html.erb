@@ -1,75 +1,84 @@
 <div class="container">
-	<%= form_for(@bar) do |f| %>
-	  <% if @bar.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(@bar.errors.count, "error") %> prohibited this bar from being saved:</h2>
+	<div class="row">
+		<div class="span12">
+			<div class="span8 offset2">
+				<%= form_for(@bar) do |f| %>
+				  <% if @bar.errors.any? %>
+				    <div id="error_explanation">
+				      <h2><%= pluralize(@bar.errors.count, "error") %> prohibited this bar from being saved:</h2>
+				      <ul>
+				      <% @bar.errors.full_messages.each do |msg| %>
+				        <li><%= msg %></li>
+				      <% end %>
+				      </ul>
+				    </div>
+				  <% end %>
 
-	      <ul>
-	      <% @bar.errors.full_messages.each do |msg| %>
-	        <li><%= msg %></li>
-	      <% end %>
-	      </ul>
-	    </div>
-	  <% end %>
-
-	  <div class="field">
-	    <%= f.label :name %><br />
-	    <%= f.text_field :name %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :logo %><br />
-	    <%= f.text_field :logo %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :description %><br />
-	    <%= f.text_area :description %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :address %><br />
-	    <%= f.text_area :address %>
-	  </div>
-	 <div class="field">
-	    <%= f.label :geo_address %><br />
-	    <%= f.text_area :geo_address %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :latitude %><br />
-	    <%= f.text_area :latitude %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :longitude %><br />
-	    <%= f.text_area :longitude %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :email %><br />
-	    <%= f.text_field :email %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :website %><br />
-	    <%= f.text_field :page	 %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :phone %><br />
-	    <%= f.text_area :phone %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :horary %><br />
-	    <%= f.text_area :horary %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :promo %><br />
-	    <%= f.text_area :promo %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :image1 %><br />
-	    <%= f.text_field :image1 %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :image2 %><br />
-	    <%= f.text_field :image2 %>
-	  </div>
-	  <div class="actions">
-	    <%= f.submit %>
-	  </div>
-	<% end %>
+				  <div class="field">
+				    <%= f.label :Nombre_del_bar %>
+				    <%= f.text_field :name %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :Imagen_del_logo %>
+				    <%= f.text_field :logo %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :Reseña %>
+				    <%= f.text_area :description, class: "span6", rows: 6 %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :Direccion %>
+				    <%= f.text_area :address, class: "span6", rows:2 %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :Email_del_bar %>
+				    <%= f.text_field :email %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :Website %>
+				    <%= f.text_field :page	 %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :Telefono %>
+				    <%= f.text_area :phone, class: "span4", rows:2 %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :Horarios %>
+				    <%= f.text_area :horary, class: "span6", rows:2 %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :Promo %>
+				    <%= f.text_area :promo, class: "span6", rows:3 %>
+				  </div>
+				  <div class="field">
+  					<%= f.label :tag_list, "Tags (separated by commas)" %><br />
+  					<%= f.text_field :tag_list %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :image1 %>
+				    <%= f.text_field :image1 %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :image2 %>
+				    <%= f.text_field :image2 %>
+				  </div>
+				 <div class="field">
+				    <%= f.label :Direccion_en_Google %>
+				    <%= f.text_area :geo_address, class: "span4", rows: 2 %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :Latitude %>
+				    <%= f.text_area :latitude, class: "span4", rows: 2  %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :Longitude %>
+				    <%= f.text_area :longitude, class: "span4", rows: 2  %>
+				  </div>
+				  <div class="actions">
+				    <%= f.submit %>
+				  </div>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>

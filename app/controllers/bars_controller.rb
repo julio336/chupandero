@@ -3,10 +3,14 @@ class BarsController < ApplicationController
   # GET /bars.json
   def index
     @bars = Bar.all
-
+    @tag_list = @bars.map do |u|
+      {:tag => u.tag_list}
+    end 
+    json = @tag_list.to_json
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @bars }
+      format.json  { render :json => {:bar => @bars, 
+                                  :tags => json }}
     end
   end
 

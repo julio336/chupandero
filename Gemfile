@@ -10,6 +10,10 @@ gem 'devise'
 
 #geolocation
 gem 'geocoder'
+
+#tagging
+gem 'acts-as-taggable-on'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
