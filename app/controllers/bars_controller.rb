@@ -1,12 +1,14 @@
 class BarsController < ApplicationController
   # GET /bars
   # GET /bars.json
+  before_filter :authenticate_user!, except: [:index, :show]
+
   def index
     @bars = Bar.all
     @tag_list = @bars.map do |u|
       {:tag => u.tag_list}
     end 
-    json = @tag_list.to_json
+    json = @tag_list
     respond_to do |format|
       format.html # index.html.erb
       format.json  { render :json => {:bar => @bars, 
